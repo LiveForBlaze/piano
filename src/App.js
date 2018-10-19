@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Main from './components/Main';
+import { Main } from './components/Main';
 import List from './components/List';
 
 const Layout = () => (
   <div style={{ height: '100%' }}>
-    Stackoverflow search:
     <Route exact path="/" component={Main} />
     <Route exact path="/list" component={List} />
   </div>

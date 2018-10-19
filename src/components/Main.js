@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-class Main extends Component {
+class MainUI extends Component {
   constructor(){
     super();
     this.state = {
@@ -19,28 +19,24 @@ class Main extends Component {
   }
 
   handleSearch() {
-    const { question } = this.state;
+    const { question, data } = this.state;
     const url = `https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=${question}&site=stackoverflow`;
     fetch(url)
       .then(d => d.json())
       .then(d => {
         this.setState({
           data: d,
-        })
+        });
       });
   }
 
   render() {
     const { question, data } = this.state;
-    console.log(data);
     if (data) {
-      return (
-        <Redirect to={{
-          pathname: `/list`,
-          state: { data },
-        }}
-        />
-      )
+      this.props.history.push({
+        pathname: '/list',
+        state: { data },
+      });
     }
     return (
       <div className="input-group mb-3">
@@ -51,4 +47,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export const Main =  withRouter(MainUI);

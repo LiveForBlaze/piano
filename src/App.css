@@ -1,3 +1,9 @@
 .cont {
   height: 100vh;
 }
+.main {
+  padding: 30px;
+  margin: 30px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,.17);
+}
