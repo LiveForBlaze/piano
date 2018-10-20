@@ -16,10 +16,14 @@ class MainUI extends Component {
       question: [e.target.value],
     })
   }
-
+  handleKeyPress = (event) => {
+    if(event.key == 'Enter'){
+      this.handleSearch();
+    }
+  }
   handleSearch() {
     const { question } = this.state;
-    const url = `https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=${question}&site=stackoverflow`;
+    const url = `https://api.stackexchange.com/2.2/search?order=desc&sort=votes&intitle=${question}&site=stackoverflow`;
     fetch(url)
       .then(d => d.json())
       .then(d => {
@@ -43,7 +47,7 @@ class MainUI extends Component {
           <div className="col">
           <h1><b>#PIANOTEST</b>: <em className="rus">RUSTAM MUKHAMEDOV</em></h1>
             <div className="input-group mb-3 search border-white">
-              <input type="text" className="form-control border-white" placeholder="Enter your question" aria-label="Enter your question" aria-describedby="basic-addon2" value={question} onChange={this.handleChange} />
+              <input type="text" className="form-control border-white" placeholder="Enter your question" aria-label="Enter your question" aria-describedby="basic-addon2" value={question} onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
               <div className="input-group-append"><button className="btn btn-outline-secondary button" type="button" onClick={this.handleSearch}>Search</button></div>
             </div>
           </div>

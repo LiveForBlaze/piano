@@ -6,7 +6,6 @@ class Question extends Component {
   }
   componentDidMount() {
     const { question_id } = this.props.location.state.value;
-    const { data } = this.state;
     const url = `https://api.stackexchange.com/2.2/questions/${question_id}/answers?order=desc&sort=activity&site=stackoverflow&filter=withbody`;
     fetch(url)
       .then(d => d.json())
@@ -36,7 +35,7 @@ class Question extends Component {
           data.items.map((item, i) => {
               return (
                 <div key={i} className="answer">
-                  <h6>{item.owner.display_name}:</h6>
+                  <h4>{`${item.owner.display_name} (reputation: ${item.owner.reputation})`}:</h4>
                   <div className="content" dangerouslySetInnerHTML={{__html: item.body}}></div>
                 </div>
               );

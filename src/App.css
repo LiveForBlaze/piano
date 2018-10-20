@@ -68,7 +68,7 @@ code {
 .search {
   background: rgba(0,0,0,.1);
   padding: 20px;
-  min-width: 600px;
+  min-width: 400px;
   max-width: 1200px;
   border-radius: 15px;
 }

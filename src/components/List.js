@@ -61,10 +61,10 @@ class List extends Component {
         <table className="table border-0">
           <thead className="thead">
             <tr className="head">
-              <td scope="col"><h6>AUTHOR</h6></td>
-              <td scope="col"><h6>Title</h6></td>
-              <td scope="col"><h6>Answers</h6></td>
-              <td scope="col"><h6>Tags</h6></td>
+              <td><h6>AUTHOR</h6></td>
+              <td><h6>Title</h6></td>
+              <td><h6>Answers</h6></td>
+              <td><h6>Tags</h6></td>
             </tr>
           </thead>
           <tbody>
@@ -88,10 +88,10 @@ class List extends Component {
         <table className="table border-0">
           <thead className="thead-dark">
             <tr className="head">
-              <td scope="col"><h6>AUTHOR</h6></td>
-              <td scope="col"><h6>Title</h6></td>
-              <td scope="col"><h6>Answers</h6></td>
-              <td scope="col"><h6>Tags</h6></td>
+              <td><h6>AUTHOR</h6></td>
+              <td><h6>Title</h6></td>
+              <td><h6>Answers</h6></td>
+              <td><h6>Tags</h6></td>
             </tr>
           </thead>
           <tbody>
