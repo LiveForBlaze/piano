@@ -11,7 +11,6 @@ class MainUI extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
-
   handleChange(e) {
     this.setState({
       question: [e.target.value],
@@ -19,7 +18,7 @@ class MainUI extends Component {
   }
 
   handleSearch() {
-    const { question, data } = this.state;
+    const { question } = this.state;
     const url = `https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=${question}&site=stackoverflow`;
     fetch(url)
       .then(d => d.json())
@@ -39,9 +38,16 @@ class MainUI extends Component {
       });
     }
     return (
-      <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="Enter your question" aria-label="Enter your question" aria-describedby="basic-addon2" value={question} onChange={this.handleChange} />
-        <div className="input-group-append"><button className="btn btn-outline-secondary" type="button" onClick={this.handleSearch}>Search</button></div>
+      <div className="container fade-in">
+        <div className="row align-items-center height">
+          <div className="col">
+          <h1><b>#PIANOTEST</b>: <em className="rus">RUSTAM MUKHAMEDOV</em></h1>
+            <div className="input-group mb-3 search border-white">
+              <input type="text" className="form-control border-white" placeholder="Enter your question" aria-label="Enter your question" aria-describedby="basic-addon2" value={question} onChange={this.handleChange} />
+              <div className="input-group-append"><button className="btn btn-outline-secondary button" type="button" onClick={this.handleSearch}>Search</button></div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

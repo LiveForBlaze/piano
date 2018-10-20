@@ -5,14 +5,13 @@ class ListItem extends Component {
     const { data, id, updateData } = this.props;
     return (
       <tr>
-        <th scope="row">{id}</th>
-        <td>{data.owner.display_name}</td>
-        <td>{data.title}</td>
-        <td>{data.answer_count}</td>
+        <td><span className="link" onClick={() => {updateData('author', data.owner)}}>{data.owner.display_name}</span></td>
+        <td><span className="link" onClick={() => {updateData('title', data)}}>{data.title}</span></td>
+        <td><span className="link" onClick={() => {updateData('title', data)}}>{data.answer_count}</span></td>
         <td>
           {
             data.tags.map((item, i) => {
-              return <div key={i} onClick={() => {updateData(item)}}>{item}</div>
+                return <div key={i}><span className="link" onClick={() => {updateData('tag', item)}}>{item}</span></div>
             })
           }
         </td>

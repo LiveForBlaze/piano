@@ -1,9 +1,126 @@
+body {
+  background: linear-gradient(left, #a1c4fd, #c2e9fb);
+  color: rgba(0,0,0,.7);
+  font-size: 18px;
+}
+.border-0 h6,
+.rus {
+  font-weight: 900;
+  color: rgba(255,255,255,.8);
+  text-transform: uppercase;
+}
+code {
+  display: block;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
 .cont {
   height: 100vh;
+}
+.rus {
+  font-size: 24px;
+  color: rgba(255, 0, 0, 0.6);
 }
 .main {
   padding: 30px;
   margin: 30px;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,.17);
+  border-radius: 15px;
+  min-width: 700px;
+  max-width: 1200px;
+  background-color: rgba(0,0,0,.1);
+  box-sizing: border-box;
+  width: 100%;
+}
+.head td {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.head td:nth-child(1) {
+  border-top-left-radius: 15px;
+}
+.head td:nth-child(4) {
+  border-top-right-radius: 15px;
+}
+.link {
+  cursor: pointer;
+  color: rgba(0,0,0,.7);
+  font-weight: 600;
+}
+.grey {
+  color: rgba(0,0,0,.5);
+}
+.answers {
+  margin-top: 40px;
+}
+
+.answer {
+  padding: 20px;
+  background: rgba(0,0,0,.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.search {
+  background: rgba(0,0,0,.1);
+  padding: 20px;
+  min-width: 600px;
+  max-width: 1200px;
+  border-radius: 15px;
+}
+.height {
+  height: 100vh;
+}
+.button {
+  background-color: rgba(0,0,0,.1);
+  color: white;
+  border-color: white;
+}
+
+.border-white {
+  border-color: white;
+}
+.border-0,
+.border-0 th,
+.border-0 thead,
+.border-0 tbody tr,
+.border-0 tr td {
+  border-color: rgba(0,0,0,0);
+  padding: 20px;
+}
+.border-0 {
+  background: rgba(0,0,0,.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+}
+
+.border-0 td {
+  word-wrap: break-word;
+}
+
+.border-0 td:nth-child(2) {
+  word-break: break-all;
+}
+
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.8s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
