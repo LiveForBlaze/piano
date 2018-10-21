@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class ListItem extends Component {
+export class ListItem extends Component {
   render() {
-    const { data, id, updateData } = this.props;
+    const { data, updateData } = this.props;
     return (
       <tr>
         <td><span className="link" onClick={() => {updateData('author', data.owner)}}>{data.owner.display_name}</span></td>
-        <td><span className="link" onClick={() => {updateData('title', data)}}>{data.title}</span></td>
+        <td><span className="link" onClick={() => {updateData('title', data)}}>{String(data.title)}</span></td>
         <td><span className="link" onClick={() => {updateData('title', data)}}>{data.answer_count}</span></td>
         <td>
           {
@@ -19,5 +19,3 @@ class ListItem extends Component {
     );
   }
 }
-
-export default ListItem;

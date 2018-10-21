@@ -1,0 +1,18 @@
+{
+  "main": {
+    "Language": "English",
+    "Search": "Search",
+    "RUSTAM MUKHAMEDOV": "RUSTAM MUKHAMEDOV",
+    "Enter your question": "Enter your question"
+  },
+  "list": {
+    "SEARCH RESULTS": "SEARCH RESULTS",
+    "no data": "Ooops! You are trying to get this app working localy. But something is wrong. I am pretty sure that you realise that getting info from Stackoverflow.com requires internet connection. So the only reason you see this message is that some mouse have gnawed the internet wires. Go get it!",
+    "has error": "It's not me (honestly)! This is the Stackoverflow problem",
+    "Author": "Author",
+    "Answers": "Answers",
+    "Title": "Title",
+    "Tags": "Tags",
+    "sort": ""
+  }
+}

@@ -1,10 +1,23 @@
 body {
-  background: linear-gradient(left, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+  background: linear-gradient(left top, #a1c4fd, #c2e9fb);
   color: rgba(0,0,0,.7);
   font-size: 18px;
+  background-repeat: no-repeat;
+  background: -webkit-gradient(left top, from(#a1c4fd), to(#c2e9fb));
+  background: -webkit-linear-gradient(#a1c4fd, #c2e9fb);
+  background: -moz-linear-gradient( #a1c4fd, #c2e9fb);
+  background: -ms-linear-gradient(#a1c4fd, #c2e9fb);
+  background: -o-linear-gradient(#a1c4fd, #c2e9fb);
+  background: linear-gradient(95deg, #a1c4fd, #c2e9fb);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a1c4fd', endColorstr='#c2e9fb');
+  zoom: 1;
+  background-repeat: no-repeat;
 }
-.border-0 h6,
-.rus {
+h1, h2, h3 {
+  font-weight: 900;
+}
+.border-0 h6 {
   font-weight: 900;
   color: rgba(255,255,255,.8);
   text-transform: uppercase;
@@ -14,32 +27,79 @@ code {
   padding: 15px;
   width: 100%;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;
 }
+img {
+  width: 100%;
+}
+.absolute {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 40px;
+  background: rgba(255,255,255,.3);
+  opacity: 0.9;
+  z-index: 1;
+}
+.drop {
+  font-weight: 600;
+  color: white;
+  background-color: rgba(255,0,0,.7);
+}
+.drop:hover {
+  color: white;
+  background-color: rgba(255,0,0,.85);
+}
+.sort {
+  background-image: url('svg/sort-down.svg');
+  background-position: 105px 24px;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+.sort-ru{
+  background-position: 90px 24px;
+}
+.up {
+  background-image: url('svg/sort-up.svg');
+}
+.sort-link {
+  cursor: pointer;
+}
 .cont {
   height: 100vh;
 }
 .rus {
+  font-weight: 900;
+  display: inline-block;
+  position: relative;
+  top: -2px;
   font-size: 24px;
-  color: rgba(255, 0, 0, 0.6);
+  color: rgba(255, 0, 0, 0.55);
+  text-transform: uppercase;
+}
+.rus:hover {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.80);
 }
 .main {
   padding: 30px;
   margin: 30px;
-  border-radius: 15px;
+  border: 2px dashed rgba(0,0,0,.2);
+  box-shadow: inset 10px 10px 70pt 20pt rgba(255,255,255,.07);
   min-width: 700px;
   max-width: 1200px;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.07);
   box-sizing: border-box;
   width: 100%;
+  border-radius: 15px;
 }
 .head td {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.6);
 }
 .head td:nth-child(1) {
   border-top-left-radius: 15px;
@@ -51,17 +111,18 @@ code {
   cursor: pointer;
   color: rgba(0,0,0,.7);
   font-weight: 600;
+  word-wrap: normal;
 }
 .grey {
-  color: rgba(0,0,0,.5);
+  font-weight: 900;
+  color: rgba(255,255,255,.64);
 }
 .answers {
   margin-top: 40px;
 }
-
 .answer {
   padding: 20px;
-  background: rgba(0,0,0,.1);
+  background: rgba(0,0,0,.05);
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -80,9 +141,15 @@ code {
   color: white;
   border-color: white;
 }
-
 .border-white {
   border-color: white;
+}
+.border-grey {
+  border-color: rgba(0,0,0,.2);
+}
+.border-red {
+  border: 2px dashed rgba(0,0,0,.2);
+  box-shadow: inset 10px 10px 10pt 5pt rgba(255,255,255,.07);
 }
 .border-0,
 .border-0 th,
@@ -93,27 +160,18 @@ code {
   padding: 20px;
 }
 .border-0 {
-  background: rgba(0,0,0,.1);
+  margin-top: 25px;
+  background: rgba(0,0,0,.05);
   border-radius: 15px;
   padding: 20px;
   width: 100%;
 }
-
-.border-0 td {
-  word-wrap: break-word;
-}
-
-.border-0 td:nth-child(2) {
-  word-break: break-all;
-}
-
-
 .fade-in {
 	opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-duration: 1s;
 }
 
 @keyframes fadeInOpacity {

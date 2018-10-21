@@ -26,10 +26,10 @@ class Question extends Component {
         <div className="row align-items-center">
           <div className="col">
       <div className="main">
-        <h3>{value.title}</h3>
+        <h2 className="rus">{value.title}</h2>
         <h5 className="grey">Author: {value.owner.display_name}</h5>
         <h5 className="grey">Created: {String(created)}</h5>
-        <h5 className="answers">Answers ({value.answer_count}):</h5>
+        <h3 className="answers">Answers ({value.answer_count}):</h3>
         {
           !!data &&
           data.items.map((item, i) => {
