@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 
-class Question extends Component {
+class QuestionUI extends Component {
   state = {
     data: '',
   }
@@ -18,8 +19,7 @@ class Question extends Component {
   render() {
     const { value } = this.props.location.state;
     const { data } = this.state;
-    console.log(value);
-    console.log(data);
+    const { t } = this.props;
     const created = new Date(value.creation_date);
     return (
       <div className="container fade-in">
@@ -27,9 +27,9 @@ class Question extends Component {
           <div className="col">
       <div className="main">
         <h2 className="rus">{value.title}</h2>
-        <h5 className="grey">Author: {value.owner.display_name}</h5>
-        <h5 className="grey">Created: {String(created)}</h5>
-        <h3 className="answers">Answers ({value.answer_count}):</h3>
+        <h5 className="grey">{t('list.Author')}: {value.owner.display_name}</h5>
+        <h5 className="grey">{t('list.Created')}: {String(created)}</h5>
+        <h3 className="answers">{t('list.Answers')} ({value.answer_count}):</h3>
         {
           !!data &&
           data.items.map((item, i) => {
@@ -49,4 +49,4 @@ class Question extends Component {
   }
 }
 
-export default Question;
+export const Question = translate('common')(QuestionUI);

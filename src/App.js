@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Main } from './components/Main';
 import { List } from './components/List';
-import Question from './components/Question';
+import { Question } from './components/Question';
 import { NotFound } from './components/NotFound';
 import { Navbar } from './components/Navbar';
 import { I18nextProvider } from 'react-i18next';
